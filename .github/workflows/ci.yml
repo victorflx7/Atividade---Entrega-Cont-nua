@@ -17,12 +17,15 @@ jobs:
       with:
         node-version: "20"
 
-    - name: Instalar dependências (incluindo Jest)
+    - name: Instalar dependências
       run: npm install
       working-directory: ./site
 
+    - name: Instalar Jest globalmente
+      run: npm install -g jest
+
     - name: Rodar testes
-      run: npx jest
+      run: jest
       working-directory: ./site
 
     - name: Deploy na Vercel
