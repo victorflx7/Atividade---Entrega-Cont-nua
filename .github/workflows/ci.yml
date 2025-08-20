@@ -31,3 +31,11 @@ jobs:
     - name: Deploy na Vercel
       run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --confirm
       working-directory: ./site
+
+    - name: Notificar sucesso
+      if: success()
+      run: echo "✅ Pipeline executado com sucesso!"
+      
+    - name: Notificar falha
+      if: failure()
+      run: echo "❌ Pipeline falhou!"
