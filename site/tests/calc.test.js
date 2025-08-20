@@ -1,4 +1,4 @@
-const calcular = require("../src/calc");
+const calcular = require("./calc.js");
 
 test("soma de 2 + 3 deve ser 5", () => {
   expect(calcular(2, 3, "soma")).toBe(5);
